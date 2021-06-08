@@ -63,7 +63,7 @@
                     </div>
                     <div class="container-fluid">
                     <label>State:
-                        <select>
+                        <select id="state">
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
                             <option value="AZ">Arizona</option>
@@ -122,14 +122,14 @@
                     <label>Zip:
                         <input type="text" id="zipcode" placeholder="Zip Code">
                     </label>
-                    </div>
+        </div>
                     <div class="container-fluid">
-                    <label>Distance:
+                    <label>Radius:
                         <select name="radius" id="radius">
-                            <option value="5mins">5mins</option>
-                            <option value="10mins">10mins</option>
-                            <option value="15misn">15mins</option>
-                            <option value="20mins">20mins</option>
+                            <option value="5">5mins</option>
+                            <option value="10">10mins</option>
+                            <option value="15">15mins</option>
+                            <option value="20">20mins</option>
                         </select>
                     </label>
                     </div>
@@ -153,12 +153,12 @@
                 <div class="carousel-inner">
                   <div class="item active">
                       <img class="resimg" src="" alt="">
-                    <span class="resname"></span>
-                    <span class="resaddress"></span>
-                    <span class="resphone"></span>
-                    <span class="cuisine"></span>
-                    <span class="rating"></span>
-                    <span class="price"></span>
+                    <p class="resname"></p>
+                    <p class="resaddress"></p>
+                    <p class="resphone"></p>
+                    <p class="cuisine"></p>
+                    <p class="rating"></p>
+                    <p class="price"></p>
                   </div>
               
                   <div class="item">
@@ -219,5 +219,6 @@
 
     
     </div>
+    <script src="js/scripts.js"></script>
   </body>
 </html>
