@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .navbar-row {
     width: 100%;
     display: flex;
@@ -18,5 +22,12 @@
 #searchForm {
     background-color: #12355b;
 }
+
+fieldset {
+    margin: 0 40px 0;
+}
+
+
+
 
 
