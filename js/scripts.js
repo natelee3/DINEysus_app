@@ -4,7 +4,7 @@ const startButton = document.querySelector('#getStarted');
 const documenuToken = `fcde733833850f1632dfc4288c914dd6`
 const mapquestKey = `EpFz7Wy7GIu3sNdKCA7Iq9cZ6PM6Gd3G`
 const mapboxToken = `pk.eyJ1IjoibmF0ZWxlZTMiLCJhIjoiY2twbXN2aGMyMTVudzJvbzF5cXp6eXNxcSJ9.gS-W91_vNYab7sDkoO0KrA`
-
+const yelpAPIkey = `e82-gWGYIaLCXFbkks8heHoFDH8JkNLqWxChnD2Tnkpl4uQynsxJT9D-J0mGgr5yAC5WbNncOZfgMtPspCy-QE2F6T57s0dPMSX3NQsBLb0xxM8Q7luUP-iR73G-YHYx`
 
 startButton.addEventListener('click', function() {
     console.log("Button clicked")
@@ -15,6 +15,9 @@ startButton.addEventListener('click', function() {
     const radiusInput = document.querySelector('#radius');
     const streetInput = streetInputRaw.value.replace(/\s/g, "+");
     addressToGeo(streetInput, cityInput.value, stateInput.value, zipInput.value, radiusInput.value)
+
+    const resultsElement = document.querySelector('#resultsSection');
+    resultsElement.scrollIntoView()
 })
 
 function addressToGeo (street, city, state, zip, radius) {
@@ -55,6 +58,10 @@ function updateResults (body, userLat, userLon) {
     const carousel = document.querySelector('.carousel-inner')
     const resultArray = body.data.slice(0,3)
     resultArray.forEach(function (item, index) {
+
+        // getYelpDetails(item.restaurant_name, userLat, userLon)
+        
+
         let itemDiv = document.createElement('div');
         itemDiv.classList.add('carousel-item');
         if (index == 0) {itemDiv.classList.add('active')};
@@ -90,6 +97,7 @@ function updateResults (body, userLat, userLon) {
         let choiceButton = document.createElement('button');
         choiceButton.classList.add("choiceButton", "btn", "btn-primary", "btn-lg")
         choiceButton.innerText = "Choose this Option";
+        // textStart.append(resultImage);
         textStart.append(resultName);
         textStart.append(resultAddress);
         textStart.append(resultPhone);
@@ -195,5 +203,32 @@ function buttonHandler(e){
         let userChoice = document.querySelector('#carousel-item active > h3');
         console.log("User Choice: ", userChoice)
         console.log("One of the user choice buttons was clicked.")
+
+        const mapElement = document.querySelector('#mapSection');
+        mapElement.scrollIntoView()
     }
 }
+
+// function getYelpDetails (term, lat, lon) {
+//     let yelpUrl = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=waffle+house&latitude=34.176714&longitude=-84.42049`
+//     fetch(yelpUrl, {
+//         headers: {
+//             "Authorization": `Bearer ${yelpAPIkey}`,
+//             "Access-Control-Allow-Origin": "*",
+//             "accept": "application/json"
+//         },
+//     })
+//         .then(response => {
+//             return response.json()
+//         })
+//         .then(body => {
+//             console.log(body)
+//             let resultImage = document.createElement('img')
+//             resultImage.setAttribute('src', body.businesses[0].image_url)
+//         })
+//         .catch(error => {
+//             console.error("ERROR", error)
+//             return error
+//         })
+// }       
+
