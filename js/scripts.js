@@ -25,6 +25,8 @@ function addressToGeo (street, city, state, zip, radius) {
         .then(body => {
             let userLat = body.results[0].locations[0].latLng.lat
             let userLng = body.results[0].locations[0].latLng.lng
+            console.log("User lat and lon: ", userLat, userLng)
+            console.log("Minutes: ", radius)
             getResults(userLat, userLng, radius)
         })
         .catch(error => {
