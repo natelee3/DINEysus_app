@@ -1,3 +1,22 @@
-#navbar {
+.navbar-row {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 2px 2px 7px;
+    margin-top: 10px;
+    position: sticky;
+    
 }
+
+ .text-description {
+    text-align: center;
+    color: red;
+}
+#getStarted {
+    display: inherit;
+}
+#searchForm {
+    background-color: #12355b;
+}
+
+
