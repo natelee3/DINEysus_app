@@ -1,9 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: content-box;
+html {
+    scroll-behavior: smooth;
 }
-
 
 .navbar-row {
     width: 100%;
@@ -33,6 +30,13 @@ body{
 #searchForm {
     background-color: #12355b;
 }
+
+fieldset {
+    margin: 0 40px 0;
+}
+
+
+
 
 
 
