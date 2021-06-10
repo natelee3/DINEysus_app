@@ -37,7 +37,7 @@
                         <a class="nav-link" href="./team.html">Meet the Team</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">View the Repo</a>
+                        <a class="nav-link" href="https://github.com/natelee3/DINEysus">View the Repo</a>
                     </li>
 
                 </ul>
@@ -58,7 +58,7 @@
         
 
         <!-- User inputs to begin search -->
-        <section class="start" style="height: 100vh; background-image: url('./picnic.jpg'); background-attachment: fixed; background-size: cover; background-position: center">
+        <section class="start" style="height: 100vh; background-image: url('./css/images/picnic.jpg'); background-attachment: fixed; background-size: cover; background-position: center">
            <div class="row" style="height: 60px">
             <!-- <div class="card mt-5">
                 <div class="card-body text-center">
@@ -74,23 +74,24 @@
                     <div class="container-fluid mx-auto" style="border-radius: 5px; background-color: rgba(116,131,134,0.3); max-width: 50vh; padding: 40px;">
                         <p class="card-text text-description text-white" style="text-align: center; ;">There are few things more satisfying than dining with friends, but we know that planning an outing can be time-consuming. Instead, why not use our app to quickly identify nearby eateries, get directions, and even send SMS invites right from this page?</p><p class="text-description text-white" style="text-align: center;"><em>This</em> is DINEysus</p>
                     
-                        <div class="mb-3">
+                        <div>
                             <label" class="form-label">Street Name:
                                 <input type="text"  
                                     id="street-name" 
+                                    class="form-control"
                                     aria-describedby="streetAddress"
                                     required>
                             </label>
                         </div>
                         <div>
                             <label class="form-label">City:
-                                    <input type="text" id="city" aria-describedby="city"
+                                    <input class="form-control" type="text" id="city" aria-describedby="city"
                                         required>
                             </label>
                         </div>
                         <div>
-                            <label> State:
-                                <select id="state" required> 
+                            <label class="form-label"> State:
+                                <select class="form-control" id="state" required> 
                                     <option value="AL">Alabama</option>
                                     <option value="AK">Alaska</option>
                                     <option value="AZ">Arizona</option>
@@ -146,30 +147,30 @@
                             </label>
                         </div>
                         <div class="container-fluid;">
-                            <label>Zip:
+                            <label class="form-label">Zip:
                                 <input type="text" 
+                                class="form-control"
                                     id="zipcode" 
                                     placeholder="Zip Code"
                                     required>
                             </label>
                         </div>
-                    <div class="btn-">
-                        <label>Distance:
-                            <select name="radius" id="radius">
-                                <option value="5">5mins</option>
-                                <option value="10">10mins</option>
-                                <option value="15">15mins</option>
-                                <option value="20">20mins</option>
-                            </select>
-                        </label>
-                    </div>
-                    <div class="">
-
-                        <button id="getStarted" class="btn btn-primary btn-lg" type="button">Get Started</button>
-                    </div>
-                </fieldset>
-            </form>
-    </div>
+                        <div class="container-fluid">
+                            <label class="form-label">Distance:
+                                <select class="form-control" name="radius" id="radius">
+                                    <option value="5">5mins</option>
+                                    <option value="10">10mins</option>
+                                    <option value="15">15mins</option>
+                                    <option value="20">20mins</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="text-center">
+                            <button id="getStarted" class="btn btn-primary btn-lg" type="button">Get Started</button>
+                        </div>
+                    </fieldset>
+                </form>
+        </div>
     </section>
     <hr>
     <!-- Carousel for Results -->
@@ -230,10 +231,11 @@
         <!-- <hr> -->
 
        
-        <section id="mapSection" class="mapbox" style="height: 92vh; background-image: url('./city.jpg'); background-attachment: fixed; background-size: cover;">
+        <section id="mapSection" class="mapbox" style="height: 92vh; width: 100vw; background-image: url('./css/images/city.jpg'); background-attachment: fixed; background-size: cover;">
             <div class="row" style="height:60px;">
                 <!-- This is an empty div to make up for the sticky header -->
             </div>
+            <div class="container-fluid mx-auto" style="border-radius: 5px; background-color: rgba(116,131,134,0.7); max-width: 50vh; padding: 40px;">
             <div class="row pt-3" style="height: 60px">
                 <div class="container">
                     <h1 class="text-white" style="text-align: center;">Map It:</h1>
@@ -247,14 +249,14 @@
                 <form>
                     <fieldset>
                         <!-- <div class="container-fluid" style="border-radius: 5px;  padding: 40px;"> -->
-                        <div class="container-fluid mx-auto" style="border-radius: 5px; background-color: rgba(116,131,134,0.7); max-width: 50vh; padding: 40px;">
+                        
                     <h2 class="text-white">Invite Friends:</h2>
 
-                        <label>
-                            <input type="text" class="recipientName" placeholder="Enter Name"
+                        <label class="form-label mb-2">
+                            <input type="text" class="recipientName form-control" placeholder="Enter Name">
                         </label>
-                        <label>
-                            <input type="tel" class="recipientNumber" placeholder="Enter Phone Number">
+                        <label class="form-label mb-2">
+                            <input type="tel" class="recipientNumber form-control" placeholder="Enter Phone Number">
                         </label>
                         <button type="button" class="btn btn-primary submitButton">Send Invite</button>
                         </div>
