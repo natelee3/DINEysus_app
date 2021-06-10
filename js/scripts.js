@@ -46,7 +46,7 @@ function getResults (lat, lon, minutes) {
         })
         .then(body => {
             console.log(body)
-            updateResults(body, lat, lon)
+            sliceResults(body, lat, lon)
         })
         .catch(error => {
             console.error("ERROR", error);
@@ -54,67 +54,91 @@ function getResults (lat, lon, minutes) {
         })
 }
 
-function updateResults (body, userLat, userLon) {
-    const carousel = document.querySelector('.carousel-inner')
+function sliceResults(body, lat, lon) {
     const resultArray = body.data.slice(0,3)
-    resultArray.forEach(function (item, index) {
+    getYelpDetails(resultArray, lat, lon)
+}
 
-        // getYelpDetails(item.restaurant_name, userLat, userLon)
-        
+function getYelpDetails (resultArray, lat, lon) {
+    let imageArray = []
+        resultArray.forEach(function (item) {
+
+            let searchTerm = item.restaurant_name
+            let yelpUrl = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${searchTerm}&latitude=${lat}&longitude=${lon}`
+            fetch(yelpUrl, {
+                headers: {
+                    "Authorization": `Bearer ${yelpAPIkey}`,
+                    "Access-Control-Allow-Origin": "*",
+                    "accept": "application/json"
+                },
+            })
+                .then(response => {
+                    return response.json()
+                })
+                .then(body => {
+                    console.log(body)
+                    imageArray.push(body.businesses[0].image_url)
+                })
+                .catch(error => {
+                    console.error("ERROR", error)
+                    return error
+                })
+        })
+    
+    setTimeout(function() {
+        updateResults(imageArray, resultArray, lat, lon)
+
+    },3000)
+    
+}       
+
+function updateResults (imageArray, resultArray, userLat, userLon) {
+    const carousel = document.querySelector('.carousel-inner')
+    resultArray.forEach(function (item, index) {        
 
         let itemDiv = document.createElement('div');
         itemDiv.classList.add('carousel-item');
         if (index == 0) {itemDiv.classList.add('active')};
 
-        let svg = document.createElement('svg');
-        svg.setAttribute("class", "bd-placeholder-img");
-        svg.setAttribute("viewBox", "0 0 100 100")
-        svg.setAttribute("width", "100%");
-        svg.setAttribute("height", "100%");
-        svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-        svg.setAttribute("aria-hidden", "true");
-        svg.setAttribute("preserveAspectRatio", "xMidYMid slice");
-        svg.setAttribute("focusable", "false");
-        itemDiv.appendChild(svg)
-        let rect = document.createElement('rect');
-        rect.setAttribute("width", "100%")
-        rect.setAttribute("height", "100%");
-        rect.setAttribute("fill", "#d3d3d3");
-        svg.appendChild(rect)
+        let wrapperDiv = document.createElement('div');
+        wrapperDiv.classList.add('image-wrapper', 'row', 'justify-content-center');
+        let resultImage = document.createElement('img');
+        resultImage.classList.add('result-image', 'mx-auto')
+        resultImage.src = imageArray[index]
+        wrapperDiv.append(resultImage);
+        itemDiv.append(wrapperDiv);
 
         let textContainer = document.createElement('div');
         textContainer.classList.add('container');
-        let textStart = document.createElement('div');
-        // textStart.classList.add('carousel-caption', 'text-start')
-        textContainer.appendChild(textStart);
-        itemDiv.appendChild(textContainer);
-        let resultName = document.createElement('h3');
+
+        let resultName = document.createElement('h4');
         resultName.innerText = item.restaurant_name;
         let resultAddress = document.createElement('p');
         resultAddress = item.address.formatted
         let resultPhone = document.createElement('p');
         resultPhone.innerText = item.restaurant_phone
         let choiceButton = document.createElement('button');
-        choiceButton.classList.add("choiceButton", "btn", "btn-primary", "btn-lg")
+        choiceButton.classList.add("choiceButton", "btn", "btn-primary", "btn-md");
         choiceButton.innerText = "Choose this Option";
-        // textStart.append(resultImage);
-        textStart.append(resultName);
-        textStart.append(resultAddress);
-        textStart.append(resultPhone);
-        textStart.append(choiceButton)
+
+        textContainer.append(resultName);
+        textContainer.append(resultAddress);
+        textContainer.append(resultPhone);
+        textContainer.append(choiceButton);
+        itemDiv.append(textContainer);
         carousel.append(itemDiv)
     })
 
     // console.log(`Restaurant location is: `, body.data[0].geo.lat, body.data[0].geo.lon)
-    let destinationLat = body.data[0].geo.lat;
-    let destinationLon = body.data[0].geo.lon;
-    console.log({userLat},{userLon})
-    generateMap(userLat, userLon, destinationLat, destinationLon)
+    // let destinationLat = resultArray.data[0].geo.lat;
+    // let destinationLon = resultArray.data[0].geo.lon;
+    // console.log({userLat},{userLon})
+    generateMap(userLat, userLon)
     // generateMap(-122.42, 37.78, -77.03, 38.91)
 }
 
 
-function generateMap (lat1, lon1, lat2, lon2) {
+function generateMap (lat1, lon1) {
     // let mapboxUrl = `https://api.mapbox.com/directions/v5/mapbox/driving-traffic/${lat1},${lon1};${lat2},${lon2}?access_token=${mapboxToken}`
     // fetch(mapboxUrl)
     //     .then(response => {
@@ -209,26 +233,5 @@ function buttonHandler(e){
     }
 }
 
-// function getYelpDetails (term, lat, lon) {
-//     let yelpUrl = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=waffle+house&latitude=34.176714&longitude=-84.42049`
-//     fetch(yelpUrl, {
-//         headers: {
-//             "Authorization": `Bearer ${yelpAPIkey}`,
-//             "Access-Control-Allow-Origin": "*",
-//             "accept": "application/json"
-//         },
-//     })
-//         .then(response => {
-//             return response.json()
-//         })
-//         .then(body => {
-//             console.log(body)
-//             let resultImage = document.createElement('img')
-//             resultImage.setAttribute('src', body.businesses[0].image_url)
-//         })
-//         .catch(error => {
-//             console.error("ERROR", error)
-//             return error
-//         })
-// }       
+
 

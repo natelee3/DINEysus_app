@@ -19,16 +19,16 @@ html {
 body{
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    /* align-items: flex-end; */
     min-height: 100vh;
 }
 
 
 
- .text-description {
+.text-description {
     text-align: center;
-    color: red;
 }
+
 #getStarted {
     display: inherit;
 }
@@ -38,8 +38,35 @@ fieldset {
     margin: 0 40px 0;
 }
 
+.image-wrapper{
+    height: 150px;
+    width: auto;
+    margin: 0
+}
 
+.result-image {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 100%;
+    width: auto;
+}
 
+.fit-image{
+    width: 100%;
+    object-fit: cover;
+    height: 300px; /* only if you want fixed height */
+    }
 
+.carousel-inner {
+    height: 350px;
+}
 
+.carousel-item {
+    height: 350px;
+}
+
+.form-control::placeholder {
+    color: #000
+}
 
