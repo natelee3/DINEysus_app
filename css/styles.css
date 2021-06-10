@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -27,9 +32,7 @@ body{
 #getStarted {
     display: inherit;
 }
-#searchForm {
-    background-color: #12355b;
-}
+
 
 fieldset {
     margin: 0 40px 0;
