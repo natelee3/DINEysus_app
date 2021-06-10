@@ -38,6 +38,14 @@ fieldset {
     margin: 0 40px 0;
 }
 
+.bg-light {
+    background:transparent !important;
+    transition:0.75s ease;
+}
+.bg-light.scrolled {
+    background:#000 !important;
+}
+
 
 
 
