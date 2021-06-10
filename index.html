@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" 
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css'/>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="icon" href="css/images/favicon.ico">
     <title>DINEysus</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Logo</a>
@@ -69,7 +69,7 @@
                             </label>
                         </div>
                         <div>
-                            <label class="form-label"> State:
+                            <label class="form-label text-muted"> State:
                                 <select class="form-control" id="state" placeholder="Enter your State" required> 
                                     <option value="none" selected disabled hidden>
                                         Select your State
@@ -155,102 +155,79 @@
                         </div>
                     </fieldset>
                 </form>
-        </div>
-    </section>
-
-    <section>
-        <div id="myCarousel" class="row gap-2 justify-content-center align-items-center text-center"
-            data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-
-
-
-        </div>
-    </section>
-
-    <section id="resultsSection" class="results" style="height: 100vh; background-color: rgba(63, 167, 214, 0.3);">
-        <div class="row" style="height:60px;">
-        <!-- This is an empty div to make up for the sticky header -->
-        </div>
-        <div class="row pt-3" style="height: 150px">
-            <div class="container">
-                <h1 class="text-center text-white">Search Results:</h1>
             </div>
-        </div>
-        <div class="row" style="height: 350px">
-            <div id="myCarousel" class="carousel slide row-gap-2 justify-content-center align-items-center text-center" data-bs-ride="carousel">
-                <!-- Indicators -->
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class="" aria-current="true"></button>
+        </section>
+
+
+        <section id="resultsSection" class="results" style="height: 100vh; background-color: rgba(63, 167, 214, 0.3);">
+            <div class="row" style="height:60px;"><!-- This is an empty div to make up for the sticky header --></div>
+            <div class="row pt-3" style="height: 150px">
+                <div class="container">
+                    <h1 class="text-center text-white">Search Results:</h1>
                 </div>
-            
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    
+            </div>
+            <div class="row" style="height: 350px">
+                <div id="myCarousel" class="carousel slide row-gap-2 justify-content-center align-items-center text-center" data-bs-ride="carousel">
+                    <!-- Indicators -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class="" aria-current="true"></button>
+                    </div>
                 
-                    
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner"></div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
-        </div>
-    </section>
+        </section>
 
        
-    <section id="mapSection" class="mapbox" style="height: 92vh; width: 100vw; background-image: url('./css/images/city.jpg'); background-attachment: fixed; background-size: cover;">
-        <div class="row" style="height:60px;">
-            <!-- This is an empty div to make up for the sticky header -->
-        </div>
-        <div class="container-fluid mx-auto" style="border-radius: 5px; background-color: rgba(116,131,134,0.4); max-width: 50vh; padding: 40px;">
-            <div class="row pt-3" style="height: 60px">
-                <div class="container">
-                    <h1 class="text-white" style="text-align: center;">Map It:</h1>
+        <section id="mapSection" class="mapbox" style="height: 92vh; width: 100vw; background-image: url('./css/images/city.jpg'); background-attachment: fixed; background-size: cover;">
+            <div class="row" style="height:60px;">
+                <!-- This is an empty div to make up for the sticky header -->
+            </div>
+            <div class="container-fluid mx-auto" style="border-radius: 5px; background-color: rgba(116,131,134,0.4); max-width: 50vh; padding: 40px;">
+                <div class="row pt-3" style="height: 60px">
+                    <div class="container">
+                        <h1 class="text-white" style="text-align: center;">Map It:</h1>
+                    </div>
+                </div>
+                <div class="row pt-3 justify-content-center">
+                    <div id='map' class="pt-2 pb-2" style='width: 400px; height: 300px; border: solid black; border-width: 2px;'></div>
+                </div>
+                <div class="row text-center pt-3 pb-3" id="invite">
+                    <form>
+                        <fieldset>
+                            <!-- <div class="container-fluid" style="border-radius: 5px;  padding: 40px;"> --> 
+                            <h2 class="text-white">Invite Friends:</h2>
+                            <label class="form-label mb-2">
+                                <input type="text" class="recipientName form-control" placeholder="Enter Name">
+                            </label>
+                            <label class="form-label mb-2">
+                                <input type="tel" class="recipientNumber form-control" placeholder="Enter Phone Number">
+                            </label>
+                            <button type="button" class="btn btn-primary submitButton">Send Invite</button>
+                        </fieldset>
+                    </form>
                 </div>
             </div>
-            <div class="row pt-3 justify-content-center">
-                <div id='map' class="pt-2 pb-2" style='width: 400px; height: 300px; border: solid black; border-width: 2px;'></div>
-            </div>
-            <div class="row text-center pt-3 pb-3" id="invite">
-                <form>
-                    <fieldset>
-                        <!-- <div class="container-fluid" style="border-radius: 5px;  padding: 40px;"> -->
-                        
-                    <h2 class="text-white">Invite Friends:</h2>
+        </section>
 
-                        <label class="form-label mb-2">
-                            <input type="text" class="recipientName form-control" placeholder="Enter Name">
-                        </label>
-                        <label class="form-label mb-2">
-                            <input type="tel" class="recipientNumber form-control" placeholder="Enter Phone Number">
-                        </label>
-                        <button type="button" class="btn btn-primary submitButton">Send Invite</button>
-                    </fieldset>
-                </form>
-            </div>
-        </div>
-    </section>
+    </div>
 
-</div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
-    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
-    <script src="js/scripts.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+<script src="js/scripts.js"></script>
+
 </body>
 
 </html>
