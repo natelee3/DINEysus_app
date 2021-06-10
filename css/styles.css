@@ -1,3 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 .navbar-row {
     width: 100%;
     display: flex;
@@ -5,8 +14,16 @@
     box-shadow: 2px 2px 7px;
     margin-top: 10px;
     position: sticky;
-    
 }
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 100vh;
+}
+
+
 
  .text-description {
     text-align: center;
@@ -15,8 +32,14 @@
 #getStarted {
     display: inherit;
 }
-#searchForm {
-    background-color: #12355b;
+
+
+fieldset {
+    margin: 0 40px 0;
 }
+
+
+
+
 
 
