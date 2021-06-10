@@ -9,8 +9,16 @@ html {
     box-shadow: 2px 2px 7px;
     margin-top: 10px;
     position: sticky;
-    
 }
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 100vh;
+}
+
+
 
  .text-description {
     text-align: center;
@@ -26,6 +34,7 @@ html {
 fieldset {
     margin: 0 40px 0;
 }
+
 
 
 
