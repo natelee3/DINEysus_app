@@ -101,3 +101,7 @@ body {
         margin: 20px 10px 80px 10px;
     }
 }
+
+nav {
+    font-family: var(--bs-font-sans-serif);
+}
