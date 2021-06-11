@@ -23,8 +23,6 @@ body{
     min-height: 100vh;
 }
 
-
-
 .text-description {
     text-align: center;
 }
@@ -55,8 +53,8 @@ fieldset {
 .fit-image{
     width: 100%;
     object-fit: cover;
-    height: 300px; /* only if you want fixed height */
-    }
+    height: 300px; 
+}
 
 .carousel-inner {
     height: 350px;
@@ -80,10 +78,6 @@ fieldset {
     border-color: #020079;
 }
 
-/* .btn:hover {
-    background-color: #82A7A6;
-} */
-
 #resultsSection {
     background-image: linear-gradient(to bottom left, #82a7a6, #12355b);
     height: 100vh;
@@ -100,4 +94,15 @@ fieldset {
 
 p, h4 {
     color: #FFF
+}
+
+#resultsEmptyDiv {
+    height: 60px;
+}
+
+.mapDiv {
+    max-width: 400px;    
+    height: 300px; 
+    border: solid black; 
+    border-width: 2px;
 }

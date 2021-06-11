@@ -43,8 +43,6 @@
     
     <div id="main">
         
-
-        <!-- User inputs to begin search -->
         <section class="start" style="height: 100vh; background-image: url('./css/images/picnic.jpg'); background-attachment: fixed; background-size: cover; background-position: center">
             <div class="row" style="height: 45px"></div>
             <div class="row gx-4 gx-lg-5 align-items-center justify-content-center text-center">
@@ -143,10 +141,10 @@
                                     <option value="none" selected disabled hidden>
                                         Select Distance Radius
                                     </option>
-                                    <option value="5">5mins</option>
-                                    <option value="10">10mins</option>
-                                    <option value="15">15mins</option>
-                                    <option value="20">20mins</option>
+                                    <option value="5">5 mins</option>
+                                    <option value="10">10 mins</option>
+                                    <option value="15">15 mins</option>
+                                    <option value="20">20 mins</option>
                                 </select>
                             </label>
                         </div>
@@ -160,7 +158,7 @@
 
 
         <section id="resultsSection" class="results">
-            <div class="row" style="height:60px;"><!-- This is an empty div to make up for the sticky header --></div>
+            <div class="row" id="resultsEmptyDiv"></div>
             <div class="row pt-3" style="height: 150px">
                 <div class="container">
                     <h1 class="text-center text-white">Search Results:</h1>
@@ -172,7 +170,9 @@
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
-                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class="" aria-current="true"></button>
+                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4" class="" aria-current="true"></button>
+
                     </div>
                 
                     <!-- Wrapper for slides -->
@@ -191,27 +191,25 @@
 
        
         <section id="mapSection" class="mapbox" style="height: 92vh; width: 100vw; background-image: url('./css/images/city.jpg'); background-attachment: fixed; background-size: cover;">
-            <div class="row" style="height:30px;">
-                <!-- This is an empty div to make up for the sticky header -->
-            </div>
-            <div class="container-fluid mx-auto" style="border-radius: 5px; background-color: rgba(116,131,134,0.4); max-width: 50vh; padding: 40px;">
+            <div class="row" style="height:30px;"></div>
+            <div class="container-fluid mx-auto" style="border-radius: 5px; background-color: rgba(116,131,134,0.4); max-width: 40vw; padding: 40px;">
                 <div class="row pt-3" style="height: 60px">
                     <div class="container">
                         <h1 class="text-white" style="text-align: center;">Map It:</h1>
                     </div>
                 </div>
-                <div class="row pt-3 justify-content-center">
-                    <div id='map' class="pt-2 pb-2" style='width: 400px; height: 300px; border: solid black; border-width: 2px;'></div>
+                <div class="container-fluid pt-3 justify-content-center mx-auto mapDiv">
+                    <div id='map' class="pt-2 pb-2" style="max-width: 30vw;"></div>
                 </div>
                 <div class="row text-center pt-3 pb-3" id="invite">
                     <form>
                         <fieldset>
                             <!-- <div class="container-fluid" style="border-radius: 5px;  padding: 40px;"> --> 
                             <h2 class="text-white">Invite Friends:</h2>
-                            <label class="form-label mb-2">
-                                <input type="text" id="recipientName" class="form-control" placeholder="Enter Name">
+                            <label class="form-label mb-2 text-white">Your Name
+                                <input type="text" id="recipientName" class="form-control" placeholder="Enter Your Name">
                             </label>
-                            <label class="form-label mb-2">
+                            <label class="form-label mb-2 text-white">Their Phone Number
                                 <input type="tel" id="recipientNumber" class="form-control" placeholder="Enter Phone Number">
                             </label>
                             <button type="button" class="btn btn-primary" id="submitButton">Send Invite</button>
