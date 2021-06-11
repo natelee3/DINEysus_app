@@ -114,7 +114,7 @@ function updateResults (imageArray, resultArray, userLat, userLon) {
         let resultName = document.createElement('h4');
         resultName.innerText = item.restaurant_name;
         let resultAddress = document.createElement('p');
-        resultAddress = item.address.formatted
+        resultAddress.innerText = item.address.formatted
         let resultPhone = document.createElement('p');
         resultPhone.innerText = item.restaurant_phone
         let choiceButton = document.createElement('button');
@@ -176,39 +176,46 @@ function generateMap (lat1, lon1) {
 
 
 //Grabs text input and sends SMS message via twilio post request
-// function sendSMS (recipientNumber, chosenName) {
-//     fetch(`https://api.twilio.com/2010-04-01/Accounts/ACe38cbd4c09769f19cfeae3ff8792aa49/Messages.json`, {
-//         mode: "cors",
-//         method: "POST",
-//         headers: {'Authentication': 'Basic ' + btoa('ACe38cbd4c09769f19cfeae3ff8792aa49:01d87e452d9de9b3158b9799fd54d6c8')},
-//         body: JSON.stringify({
-//             To: `+1${recipientNumber}`,
-//             From: "+16514139078",
-//             Body: `Your friend is inviting you to join them for dinner at ${chosenName}`
-//         })
-//     })
-//     .then (response => {
-//         return response.json()
-//     })
-//     .then(data => {
-//         console.log(data)
-//     })
-//     .catch(error => {
-//         console.error("ERROR", error);
-//         return error
-//     })
-// }
+function sendSMS (recipientNumber, friendName, chosenName) {
+    const textBody = {
+        'To': `${recipientNumber}`,
+        'From': '+16514139078',
+        'Body': `Your friend ${friendName} is inviting you to join them for dinner at ${chosenName}`
+    }
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.twilio.com/2010-04-01/Accounts/ACe38cbd4c09769f19cfeae3ff8792aa49/Messages.json`, {
+        // mode: "cors",
+        origin: "null",
+        method: "POST",
+        headers: {
+            'Authorization':'Basic QUNlMzhjYmQ0YzA5NzY5ZjE5Y2ZlYWUzZmY4NzkyYWE0OTplODVjMzA3ZjM3ZmY4MmI4NDEyOGJjNGMwZDRiYzZhNA==',
+            'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8'},
+        body: new URLSearchParams(textBody)
+    })
+    .then (response => {
+        return response.json()
+    })
+    .then(data => {
+        alert("Message sent")
+        console.log(data)
+    })
+    .catch(error => {
+        console.error("ERROR", error);
+        return error
+    })
+}
 
-// //Listens on Send Invite button and calls sendSMS function
-// const submitButton = document.querySelector('#submitButton')
-// submitButton.addEventListener('click', function () {
-//     console.log("The button has been clicked")
-//     const recipientNumber = document.querySelector('#recipientNumber')
-//     const chosenName = "Zaxbys"
+//Listens on Send Invite button and calls sendSMS function
+const submitButton = document.querySelector('#submitButton')
+submitButton.addEventListener('click', function () {
+    console.log("The button has been clicked")
+    const recipientNumber = document.querySelector('#recipientNumber')
+    const friendName = document.querySelector('#recipientName')
+    const chosenName = "Zaxbys"
 
-//     sendSMS(recipientNumber, chosenName)
+    console.log(recipientNumber.value, friendName.value, chosenName)
+    sendSMS(recipientNumber.value, friendName.value, chosenName)
     
-// })
+})
 
 
 //Handler for multiple buttons
@@ -234,4 +241,14 @@ function buttonHandler(e){
 }
 
 
-
+// document.addEventListener('DOMContentLoaded', function () {
+//     fetch('https://api.twilio.com/2010-04-01/Accounts/ACe38cbd4c09769f19cfeae3ff8792aa49/Keys.json', {
+//         method: "POST"
+//     })
+//         .then(response => {
+//             return response.json()
+//         })
+//         .then(data => {
+//             console.log(data)
+//         })
+// })
