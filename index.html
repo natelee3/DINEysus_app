@@ -15,9 +15,9 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Logo</a>
+            <img class="navbar-brand" src="css/images/logo1.jpg">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -27,7 +27,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Home 
+                        <a class="nav-link" href="#">Home 
                         </a>
                     </li>
                     <li class="nav-item">
@@ -46,7 +46,7 @@
 
         <!-- User inputs to begin search -->
         <section class="start" style="height: 100vh; background-image: url('./css/images/picnic.jpg'); background-attachment: fixed; background-size: cover; background-position: center">
-            <div class="row" style="height: 50px"></div>
+            <div class="row" style="height: 45px"></div>
             <div class="row gx-4 gx-lg-5 align-items-center justify-content-center text-center">
             <form id="address">
                 <fieldset id="searchForm" class="text-white font-weight-bold">
@@ -69,7 +69,7 @@
                             </label>
                         </div>
                         <div>
-                            <label class="form-label text-muted"> State:
+                            <label class="form-label"> State:
                                 <select class="form-control" id="state" placeholder="Enter your State" required> 
                                     <option value="none" selected disabled hidden>
                                         Select your State
@@ -159,7 +159,7 @@
         </section>
 
 
-        <section id="resultsSection" class="results" style="height: 100vh; background-color: rgba(63, 167, 214, 0.3);">
+        <section id="resultsSection" class="results">
             <div class="row" style="height:60px;"><!-- This is an empty div to make up for the sticky header --></div>
             <div class="row pt-3" style="height: 150px">
                 <div class="container">
@@ -191,7 +191,7 @@
 
        
         <section id="mapSection" class="mapbox" style="height: 92vh; width: 100vw; background-image: url('./css/images/city.jpg'); background-attachment: fixed; background-size: cover;">
-            <div class="row" style="height:60px;">
+            <div class="row" style="height:30px;">
                 <!-- This is an empty div to make up for the sticky header -->
             </div>
             <div class="container-fluid mx-auto" style="border-radius: 5px; background-color: rgba(116,131,134,0.4); max-width: 50vh; padding: 40px;">
@@ -209,12 +209,12 @@
                             <!-- <div class="container-fluid" style="border-radius: 5px;  padding: 40px;"> --> 
                             <h2 class="text-white">Invite Friends:</h2>
                             <label class="form-label mb-2">
-                                <input type="text" class="recipientName form-control" placeholder="Enter Name">
+                                <input type="text" id="recipientName" class="form-control" placeholder="Enter Name">
                             </label>
                             <label class="form-label mb-2">
-                                <input type="tel" class="recipientNumber form-control" placeholder="Enter Phone Number">
+                                <input type="tel" id="recipientNumber" class="form-control" placeholder="Enter Phone Number">
                             </label>
-                            <button type="button" class="btn btn-primary submitButton">Send Invite</button>
+                            <button type="button" class="btn btn-primary" id="submitButton">Send Invite</button>
                         </fieldset>
                     </form>
                 </div>

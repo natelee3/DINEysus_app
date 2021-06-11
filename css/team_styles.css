@@ -105,3 +105,8 @@ body {
 nav {
     font-family: var(--bs-font-sans-serif);
 }
+
+.navbar-brand {
+    height: 60px;
+    width: auto;
+}

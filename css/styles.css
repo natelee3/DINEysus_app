@@ -41,7 +41,7 @@ fieldset {
 .image-wrapper{
     height: 150px;
     width: auto;
-    margin: 0
+    margin-top: 10px
 }
 
 .result-image {
@@ -70,3 +70,34 @@ fieldset {
     color: #000
 }
 
+.navbar-brand {
+    height: 60px;
+    width: auto;
+}
+
+.btn {
+    background-color: #020079;
+    border-color: #020079;
+}
+
+/* .btn:hover {
+    background-color: #82A7A6;
+} */
+
+#resultsSection {
+    background-image: linear-gradient(to bottom left, #82a7a6, #12355b);
+    height: 100vh;
+}
+
+.carousel {
+    background-color: rgba(116, 131, 134, 0.3);
+    max-width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+p, h4 {
+    color: #FFF
+}
