@@ -10,7 +10,7 @@ DINEysus takes its inspiration from Dionysus, the Greek diety of festivity. Once
 
 ## Live Demo Site
 <html>
-<a href="DINEysus.netlify.app">Go to live site on Netlify</a>
+<a href="http://DINEysus.netlify.app">Go to live site on Netlify</a>
 </html>
 
 ## Screenshots
