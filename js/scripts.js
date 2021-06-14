@@ -23,7 +23,7 @@ startButton.addEventListener('click', function() {
 
 //Call mapquest API to convert user inputted address to coordinates
 function addressToGeo (street, city, state, zip, radius) {
-    fetch(`http://www.mapquestapi.com/geocoding/v1/address?key=${mapquestKey}&street=${street}&city=${city}&state=${state}&postalCode=${zip}`)
+    fetch(`https://www.mapquestapi.com/geocoding/v1/address?key=${mapquestKey}&street=${street}&city=${city}&state=${state}&postalCode=${zip}`)
         .then(response => {
             return response.json();
         })
