@@ -1,4 +1,4 @@
-<html>
+
 # DINEysus Web App 
 
 DigitalCrafts week 6 group front-end project
@@ -9,7 +9,10 @@ Developed: 6/7/21 - 6/14/21
 DINEysus takes its inspiration from Dionysus, the Greek diety of festivity. Once you enter your address, the app gives you several options of nearby restaurants within your search radius to select. After you make your selection, you can get directions and even send text invites for friends to join you there.
 
 ## Live Demo Site
+<html>
 <a href="DINEysus.netlify.app">Go to live site on Netlify</a>
+</html>
+
 ## Screenshots
 ![DINEysus demo](./css/images/demo.gif)
 ![DINE.ysus Logo](./css/images/logo1.jpg)
@@ -37,4 +40,3 @@ DINEysus makes use of several public APIs:
 
 - <a href="https://github.com/natelee3">Nate Lee</a>
 
-</html>
