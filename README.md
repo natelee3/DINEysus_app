@@ -13,6 +13,8 @@ DINEysus takes its inspiration from Dionysus, the Greek diety of festivity. Once
 <a href="http://DINEysus.netlify.app">Go to live site on Netlify</a>
 </html>
 
+* If you encounter a CORS error, visit <https://cors-anywhere.herokuapp.com/corsdemo> and click the button to enable temporary server access.
+
 ## Screenshots
 ![DINEysus demo](./css/images/demo.gif)
 ![DINE.ysus Logo](./css/images/logo1.jpg)
@@ -30,7 +32,6 @@ DINEysus makes use of several public APIs:
 - Mapbox API: generates an interactive map with controls and navigation
 - Twilio API: uses POST request to send SMS 
 
-* If you encounter a CORS error, visit (https://cors-anywhere.herokuapp.com/corsdemo)[https://cors-anywhere.herokuapp.com/corsdemo] and click the button to enable temporary server access.
 
 ## Group
 
