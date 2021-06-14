@@ -1,10 +1,12 @@
 'use strict';
 
+//Public API keys have all been removed for security. Please visit our live deployment at http://DINEysus.netlify.app
+
 const startButton = document.querySelector('#getStarted');
-const documenuToken = `fcde733833850f1632dfc4288c914dd6`
-const mapquestKey = `EpFz7Wy7GIu3sNdKCA7Iq9cZ6PM6Gd3G`
-const mapboxToken = `pk.eyJ1IjoibmF0ZWxlZTMiLCJhIjoiY2twbXN2aGMyMTVudzJvbzF5cXp6eXNxcSJ9.gS-W91_vNYab7sDkoO0KrA`
-const yelpAPIkey = `e82-gWGYIaLCXFbkks8heHoFDH8JkNLqWxChnD2Tnkpl4uQynsxJT9D-J0mGgr5yAC5WbNncOZfgMtPspCy-QE2F6T57s0dPMSX3NQsBLb0xxM8Q7luUP-iR73G-YHYx`
+const documenuToken = ``
+const mapquestKey = ``
+const mapboxToken = ``
+const yelpAPIkey = ``
 
 //Event listener for start button to gather input data from user
 startButton.addEventListener('click', function() {
@@ -171,7 +173,7 @@ function generateMap (lat1, lon1) {
     let lat1num = parseFloat(lat1)
     let lon1num = parseFloat(lon1)
 
-    mapboxgl.accessToken = 'pk.eyJ1IjoibmF0ZWxlZTMiLCJhIjoiY2twbXN2aGMyMTVudzJvbzF5cXp6eXNxcSJ9.gS-W91_vNYab7sDkoO0KrA';
+    mapboxgl.accessToken = '';
     var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/navigation-day-v1', 
