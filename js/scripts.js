@@ -144,32 +144,12 @@ function updateResults (yelpArray, userLat, userLon) {
         itemDiv.append(textContainer);
         carousel.append(itemDiv)
     })
-
-    // console.log(`Restaurant location is: `, body.data[0].geo.lat, body.data[0].geo.lon)
-    // let destinationLat = resultArray.data[0].geo.lat;
-    // let destinationLon = resultArray.data[0].geo.lon;
-    // console.log({userLat},{userLon})
     generateMap(userLat, userLon)
-    // generateMap(-123.069003, 45.395273, -122.303707, 45.612333)
-
 }
 
 
 //Populate map div with an interactive map, centered on user coordinates
 function generateMap (lat1, lon1) {
-    // let mapboxUrl = `https://api.mapbox.com/directions/v5/mapbox/driving-traffic/'${lat1}','${lon1}';'${lat2}','${lon2}'?access_token=${mapboxToken}`
-
-    // fetch(mapboxUrl)
-    //     .then(response => {
-    //         return response.json()
-    //     })
-    //     .then(body => {
-    //         console.log(body)
-    //     })
-    //     .catch(error => {
-    //         console.error("ERROR", error);
-    //         // return error;
-    //     })
     let lat1num = parseFloat(lat1)
     let lon1num = parseFloat(lon1)
 
