@@ -148,13 +148,15 @@ function updateResults (yelpArray, userLat, userLon) {
     // let destinationLon = resultArray.data[0].geo.lon;
     // console.log({userLat},{userLon})
     generateMap(userLat, userLon)
-    // generateMap(-122.42, 37.78, -77.03, 38.91)
+    // generateMap(-123.069003, 45.395273, -122.303707, 45.612333)
+
 }
 
 
 //Populate map div with an interactive map, centered on user coordinates
 function generateMap (lat1, lon1) {
-    // let mapboxUrl = `https://api.mapbox.com/directions/v5/mapbox/driving-traffic/${lat1},${lon1};${lat2},${lon2}?access_token=${mapboxToken}`
+    // let mapboxUrl = `https://api.mapbox.com/directions/v5/mapbox/driving-traffic/'${lat1}','${lon1}';'${lat2}','${lon2}'?access_token=${mapboxToken}`
+
     // fetch(mapboxUrl)
     //     .then(response => {
     //         return response.json()
@@ -173,10 +175,14 @@ function generateMap (lat1, lon1) {
     var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/navigation-day-v1', 
-    center: [lon1num, lat1num],
+    center: [lon1num, lat1num], 
     zoom: 13
     });
-    
+
+    map.on('load', function () {
+        map.resize();
+    });
+    // Code to add map control
     map.addControl(new mapboxgl.NavigationControl());
 
     map.addControl(
@@ -251,8 +257,6 @@ function sendSMS (recipientNumber, friendName, chosenName) {
         return error
     })
 }
-
-
 
 
 
