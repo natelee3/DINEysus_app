@@ -223,7 +223,7 @@ function sendSMS (recipientNumber, friendName, chosenName) {
         origin: "null",
         method: "POST",
         headers: {
-            'Authorization':'Basic QUNlMzhjYmQ0YzA5NzY5ZjE5Y2ZlYWUzZmY4NzkyYWE0OTplODVjMzA3ZjM3ZmY4MmI4NDEyOGJjNGMwZDRiYzZhNA==',
+            'Authorization':'',
             'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8'},
         body: new URLSearchParams(textBody)
     })
